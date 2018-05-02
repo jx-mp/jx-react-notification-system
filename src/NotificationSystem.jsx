@@ -49,6 +49,7 @@ var NotificationSystem = createReactClass({
       messageWrapper: 'MessageWrapper',
       dismiss: 'Dismiss',
       action: 'Action',
+      secondaryAction: 'SecondaryAction',
       actionWrapper: 'ActionWrapper'
     },
 

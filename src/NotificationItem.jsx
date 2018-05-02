@@ -67,7 +67,8 @@ var NotificationItem = createReactClass({
       dismiss: getStyles.byElement('dismiss')(level),
       messageWrapper: getStyles.byElement('messageWrapper')(level),
       actionWrapper: getStyles.byElement('actionWrapper')(level),
-      action: getStyles.byElement('action')(level)
+      action: getStyles.byElement('action')(level),
+      secondaryAction: getStyles.byElement('secondaryAction')(level)
     };
 
     if (!dismissible || dismissible === 'none' || dismissible === 'button') {
