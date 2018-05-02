@@ -128,13 +128,13 @@ var NotificationItem = createReactClass({
     return css;
   },
 
-  _defaultAction: function(event) {
+  _defaultAction: function(event, index) {
     var notification = this.props.notification;
 
     event.preventDefault();
     this._hideNotification();
-    if (typeof notification.action.callback === 'function') {
-      notification.action.callback();
+    if (typeof notification.action[index].callback === 'function') {
+      notification.action[index].callback();
     }
   },
 
@@ -247,6 +247,19 @@ var NotificationItem = createReactClass({
     return { __html: string };
   },
 
+  _renderButton: function(current, index) {
+    var styles = current.class === 'secondary' ? this._styles.secondaryAction : this._styles.action;
+    return (
+      <button className="notification-action-button"
+        onClick={ (event) => { this._defaultAction(event, index); } }
+        style={ styles }
+        key={ index }
+      >
+        { current.label }
+      </button>
+    );
+  },
+
   render: function() {
     var notification = this.props.notification;
     var className = 'notification notification-' + notification.level;
@@ -306,16 +319,8 @@ var NotificationItem = createReactClass({
       dismiss = <span className="notification-dismiss" onClick={ this._dismiss } style={ this._styles.dismiss }>&times;</span>;
     }
 
-    if (notification.action) {
-      actionButton = (
-        <div className="notification-action-wrapper" style={ this._styles.actionWrapper }>
-          <button className="notification-action-button"
-            onClick={ this._defaultAction }
-            style={ this._styles.action }>
-            { notification.action.label }
-          </button>
-        </div>
-      );
+    if (notification.action && Array.isArray(notification.action) && notification.action.length <= 2) {
+      actionButton = notification.action.map(this._renderButton);
     }
 
     if (notification.children) {
@@ -327,7 +332,9 @@ var NotificationItem = createReactClass({
         { title }
         { message }
         { dismiss }
-        { actionButton }
+        <div className="notification-action-wrapper" style={ this._styles.actionWrapper } >
+          { actionButton }
+        </div>
       </div>
     );
   }
