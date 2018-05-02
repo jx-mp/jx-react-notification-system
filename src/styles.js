@@ -20,6 +20,8 @@ var defaultActionStyle = {
 
 var defaultActionColor = '#ffffff';
 
+var secondaryColor = '#6c757d';
+
 var STYLES = {
 
   Wrapper: {},
@@ -239,6 +241,30 @@ var STYLES = {
 
     info: {
       backgroundColor: defaultColors.info,
+      color: defaultActionColor
+    }
+  },
+
+  SecondaryAction: {
+    DefaultStyle: defaultActionStyle,
+
+    success: {
+      backgroundColor: secondaryColor,
+      color: defaultActionColor
+    },
+
+    error: {
+      backgroundColor: secondaryColor,
+      color: defaultActionColor
+    },
+
+    warning: {
+      backgroundColor: secondaryColor,
+      color: defaultActionColor
+    },
+
+    info: {
+      backgroundColor: secondaryColor,
       color: defaultActionColor
     }
   },
