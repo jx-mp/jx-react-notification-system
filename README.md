@@ -121,7 +121,7 @@ If set to 'none', the button will only be dismissible programmatically or after 
 
 ### Action
 
-Add up to two buttons and a callback function to the notification. If this button is clicked, the callback function is called (if provided) and the notification is dismissed. Class button is optional (´primary´ by default, other option ´secondary´).
+Add up to two buttons and a callback function to the notification. If this button is clicked, the callback function is called (if provided) and the notification is dismissed. Class button is optional (primary by default, other option secondary).
 
 ```js
 notification = {
