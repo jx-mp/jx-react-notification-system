@@ -1,24 +1,24 @@
 // Used for calculations
 var defaultWidth = 320;
 var defaultColors = {
-  success: {
-    rgb: '94, 164, 0',
-    hex: '#5ea400'
-  },
-  error: {
-    rgb: '236, 61, 61',
-    hex: '#ec3d3d'
-  },
-  warning: {
-    rgb: '235, 173, 23',
-    hex: '#ebad1a'
-  },
-  info: {
-    rgb: '54, 156, 199',
-    hex: '#369cc7'
-  }
+  success: '#5ea400',
+  error: '#dc3545',
+  warning: '#ebad1a',
+  info: '#369cc7'
 };
-var defaultShadowOpacity = '0.9';
+
+var defaultBoxShadow = 'rgba(0, 0, 0, 0.25) 0px 14px 45px, rgba(0, 0, 0, 0.22) 0px 10px 18px';
+
+var defaultActionStyle = {
+  background: '#ffffff',
+  borderRadius: '2px',
+  padding: '6px 20px',
+  fontWeight: 'bold',
+  margin: '10px 10px 0 0',
+  border: 0
+};
+
+var defaultActionColor = '#ffffff';
 
 var STYLES = {
 
@@ -111,39 +111,39 @@ var STYLES = {
     },
 
     success: {
-      borderTop: '2px solid ' + defaultColors.success.hex,
+      borderTop: '2px solid ' + defaultColors.success,
       backgroundColor: '#f0f5ea',
       color: '#4b583a',
-      WebkitBoxShadow: '0 0 1px rgba(' + defaultColors.success.rgb + ',' + defaultShadowOpacity + ')',
-      MozBoxShadow: '0 0 1px rgba(' + defaultColors.success.rgb + ',' + defaultShadowOpacity + ')',
-      boxShadow: '0 0 1px rgba(' + defaultColors.success.rgb + ',' + defaultShadowOpacity + ')'
+      WebkitBoxShadow: defaultBoxShadow,
+      MozBoxShadow: defaultBoxShadow,
+      boxShadow: defaultBoxShadow
     },
 
     error: {
-      borderTop: '2px solid ' + defaultColors.error.hex,
+      borderTop: '2px solid ' + defaultColors.error,
       backgroundColor: '#f4e9e9',
       color: '#412f2f',
-      WebkitBoxShadow: '0 0 1px rgba(' + defaultColors.error.rgb + ',' + defaultShadowOpacity + ')',
-      MozBoxShadow: '0 0 1px rgba(' + defaultColors.error.rgb + ',' + defaultShadowOpacity + ')',
-      boxShadow: '0 0 1px rgba(' + defaultColors.error.rgb + ',' + defaultShadowOpacity + ')'
+      WebkitBoxShadow: defaultBoxShadow,
+      MozBoxShadow: defaultBoxShadow,
+      boxShadow: defaultBoxShadow
     },
 
     warning: {
-      borderTop: '2px solid ' + defaultColors.warning.hex,
+      borderTop: '2px solid ' + defaultColors.warning,
       backgroundColor: '#f9f6f0',
       color: '#5a5343',
-      WebkitBoxShadow: '0 0 1px rgba(' + defaultColors.warning.rgb + ',' + defaultShadowOpacity + ')',
-      MozBoxShadow: '0 0 1px rgba(' + defaultColors.warning.rgb + ',' + defaultShadowOpacity + ')',
-      boxShadow: '0 0 1px rgba(' + defaultColors.warning.rgb + ',' + defaultShadowOpacity + ')'
+      WebkitBoxShadow: defaultBoxShadow,
+      MozBoxShadow: defaultBoxShadow,
+      boxShadow: defaultBoxShadow
     },
 
     info: {
-      borderTop: '2px solid ' + defaultColors.info.hex,
+      borderTop: '2px solid ' + defaultColors.info,
       backgroundColor: '#e8f0f4',
       color: '#41555d',
-      WebkitBoxShadow: '0 0 1px rgba(' + defaultColors.info.rgb + ',' + defaultShadowOpacity + ')',
-      MozBoxShadow: '0 0 1px rgba(' + defaultColors.info.rgb + ',' + defaultShadowOpacity + ')',
-      boxShadow: '0 0 1px rgba(' + defaultColors.info.rgb + ',' + defaultShadowOpacity + ')'
+      WebkitBoxShadow: defaultBoxShadow,
+      MozBoxShadow: defaultBoxShadow,
+      boxShadow: defaultBoxShadow
     }
   },
 
@@ -156,19 +156,19 @@ var STYLES = {
     },
 
     success: {
-      color: defaultColors.success.hex
+      color: defaultColors.success
     },
 
     error: {
-      color: defaultColors.error.hex
+      color: defaultColors.error
     },
 
     warning: {
-      color: defaultColors.warning.hex
+      color: defaultColors.warning
     },
 
     info: {
-      color: defaultColors.info.hex
+      color: defaultColors.info
     }
 
   },
@@ -220,33 +220,26 @@ var STYLES = {
   },
 
   Action: {
-    DefaultStyle: {
-      background: '#ffffff',
-      borderRadius: '2px',
-      padding: '6px 20px',
-      fontWeight: 'bold',
-      margin: '10px 0 0 0',
-      border: 0
-    },
+    DefaultStyle: defaultActionStyle,
 
     success: {
-      backgroundColor: defaultColors.success.hex,
-      color: '#ffffff'
+      backgroundColor: defaultColors.success,
+      color: defaultActionColor
     },
 
     error: {
-      backgroundColor: defaultColors.error.hex,
-      color: '#ffffff'
+      backgroundColor: defaultColors.error,
+      color: defaultActionColor
     },
 
     warning: {
-      backgroundColor: defaultColors.warning.hex,
-      color: '#ffffff'
+      backgroundColor: defaultColors.warning,
+      color: defaultActionColor
     },
 
     info: {
-      backgroundColor: defaultColors.info.hex,
-      color: '#ffffff'
+      backgroundColor: defaultColors.info,
+      color: defaultActionColor
     }
   },
 
